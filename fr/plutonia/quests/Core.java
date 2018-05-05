@@ -1,4 +1,4 @@
-package fr.murder.quests;
+package fr.plutonia.quests;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -14,7 +14,7 @@ import fr.murder.quests.command.Developer;
 
 public class Core extends JavaPlugin {
 	
-	public static String prefix = "§c[§6Quete§c] §f§r";
+	public static String prefix = "§e[Quete] §f";
 	public static HashMap<UUID, QPlayer> qplayer_oc;
 	public static ArrayList<Quest> quests = new ArrayList<>();
 	
