@@ -1,0 +1,7 @@
+quests:
+  - killmob:
+    - 25
+    - 45
+  - breakBlock:
+    - 450
+    - 600
