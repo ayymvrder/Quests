@@ -1,3 +1,7 @@
+package fr.plutonia.quests;
+
+import java.util.HashMap;
+
 public enum Type {
 		
 	KILL_PLAYER(0, "Tue X joueurs"),
