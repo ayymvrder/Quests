@@ -15,7 +15,7 @@ import fr.murder.quests.command.Developer;
 
 public class Core extends JavaPlugin {
 	
-	public static String prefix = "§c[§6Quete§c] §f§r";
+	public static String prefix;
 	public static HashMap<UUID, QPlayer> qplayer_oc;
 	public static ArrayList<Quest> quests = new ArrayList<>();
 	public static SQL sql;
@@ -24,6 +24,11 @@ public class Core extends JavaPlugin {
 	
 	@Override
 	public void onEnable() {
+		getConfig().options().copyDefaults(true);
+		saveDefaultConfig();
+		
+		prefix = getConfig().getString("plugin.prefix");
+		
 		qplayer_oc = new HashMap<UUID, QPlayer>();
 		
 		getCommand("developer").setExecutor(new Developer());
