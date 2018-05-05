@@ -1,4 +1,4 @@
-package fr.murder.quests.command;
+package fr.plutonia.quests.command;
 
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
