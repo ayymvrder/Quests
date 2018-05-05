@@ -55,7 +55,7 @@ public class Core extends JavaPlugin {
 	}
 	
 	public void initSQL(String urlBase, String host, String database, String username, String password, String table) {
-		sqlBase = new AskiaSqlBase(urlBase, host, database, username, password);
+		sqlBase = new SQLBase(urlBase, host, database, username, password);
 		sqlBase.connection();
 		try {
 			sqlBase.init(table);
