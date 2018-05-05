@@ -27,6 +27,13 @@ public class Core extends JavaPlugin {
 		getConfig().options().copyDefaults(true);
 		saveDefaultConfig();
 		
+		initSQL(getConfig().getString("sql.urlbase"),
+				getConfig().getString("sql.host"),
+				getConfig().getString("sql.database"),
+				getConfig().getString("sql.username"),
+				getConfig().getString("sql.password"),
+				getConfig().getString("sql.tab"));
+		
 		prefix = getConfig().getString("plugin.prefix");
 		
 		qplayer_oc = new HashMap<UUID, QPlayer>();
