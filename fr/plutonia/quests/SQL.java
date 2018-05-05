@@ -22,17 +22,17 @@ import java.util.Map;
  * This api is the property of @author Mathieu Dejoie
  *
  */
-public class AskiaSql {
+public class SQL {
 
-	private AskiaSqlBase sqlBase;
+	private SQLBase sqlBase;
 	
-	public AskiaSql() { }
+	public SQL() { }
 	
 	/**
 	 * 
 	 * @param asb
 	 */
-	public AskiaSql(AskiaSqlBase asb) {
+	public SQL(SQLBase asb) {
 		this.sqlBase = asb;
 	}
 	
@@ -40,10 +40,10 @@ public class AskiaSql {
 	 * 
 	 * @author SkyDiams aka Mathieu Dejoie
 	 * @since 4 juin 2017:22:26:44
-	 * @return AskiaSqlBase
+	 * @return SQLBase
 	 * @return
 	 */
-	public AskiaSqlBase getSqlBase() {
+	public SQLBase getSqlBase() {
 		return sqlBase;
 	}
 
@@ -54,7 +54,7 @@ public class AskiaSql {
 	 * @return void
 	 * @param sqlBase
 	 */
-	public void setSqlBase(AskiaSqlBase sqlBase) {
+	public void setSqlBase(SQLBase sqlBase) {
 		this.sqlBase = sqlBase;
 	}
 
@@ -705,8 +705,5 @@ public class AskiaSql {
 		}
 		return var;
 	}
-
-
-
 	
 }
