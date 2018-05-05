@@ -1,4 +1,4 @@
-package fr.murder.quests;
+package fr.plutonia.quests;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -14,7 +14,7 @@ import java.sql.Statement;
  *          Dejoie
  *
  */
-public class AskiaSqlBase {
+public class SQLBase {
 
 	private String urlBase;
 	private String host;
@@ -31,7 +31,7 @@ public class AskiaSqlBase {
 	 * @param username
 	 * @param password
 	 */
-	public AskiaSqlBase(String urlBase, String host, String database, String username, String password) {
+	public SQLBase(String urlBase, String host, String database, String username, String password) {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 		} catch (ClassNotFoundException e1) {
@@ -52,7 +52,7 @@ public class AskiaSqlBase {
 	 * @return
 	 * @throws SQLException 
 	 */
-	public AskiaSqlBase init(String table) throws SQLException {
+	public SQLBase init(String table) throws SQLException {
 		Statement state = connection.createStatement();
 		state.executeUpdate("CREATE TABLE IF NOT EXISTS " + table + " (Player varchar(50) NOT NULL, LastQuest varchar(50), Quest varchar(100) NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=latin1;");
 		state.close();
@@ -64,11 +64,11 @@ public class AskiaSqlBase {
 	 * 
 	 * @author SkyDiams aka Mathieu Dejoie
 	 * @since 4 juin 2017:22:27:59
-	 * @return AskiaSqlBase
+	 * @return SQLBase
 	 * @return
 	 */
-	public static AskiaSqlBase getInstance() {
-		return new AskiaSqlBase(null, null, null, null, null);
+	public static SQLBase getInstance() {
+		return new SQLBase(null, null, null, null, null);
 	}
 
 	/**
@@ -157,8 +157,8 @@ public class AskiaSqlBase {
 	 * @return Connection
 	 * @return
 	 */
-	public AskiaSql make() {
-		return new AskiaSql(this);
+	public SQL make() {
+		return new SQL(this);
 	}
 
 }
