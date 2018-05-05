@@ -34,5 +34,9 @@ public enum Type {
 			types.put(t.id, t);
 		}
 	}
+	
+	public Type getType(int i) {
+		return types.get(i);
+	}
 
 }
