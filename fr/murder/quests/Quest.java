@@ -11,10 +11,18 @@ public class Quest {
 	
 	public Quest(int id, int goal) {
 		this.name = null;
-		this.ranking = ranking;
+		this.ranking = 0;
 		this.id = 0;
 		this.progression = 0;
 		this.goal = 0;
+	}
+	
+	public void setRanking(int ranking) {
+		this.ranking = ranking;
+	}
+	
+	public void setGoal(int goal) {
+		this.goal = goal;
 	}
 	
 	public String getName() {
