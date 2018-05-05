@@ -18,8 +18,8 @@ public class Core extends JavaPlugin {
 	public static String prefix = "§c[§6Quete§c] §f§r";
 	public static HashMap<UUID, QPlayer> qplayer_oc;
 	public static ArrayList<Quest> quests = new ArrayList<>();
-	public static AskiaSql sql;
-	public static AskiaSqlBase sqlBase;
+	public static SQL sql;
+	public static SQLBase sqlBase;
 	public static String tab;
 	
 	@Override
