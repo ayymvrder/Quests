@@ -28,7 +28,7 @@ public class Core extends JavaPlugin {
 	
 		ConfigurationSection questsSection = getConfig().getConfigurationSection("quests");
 		for(String s : questsSection.getKeys(true)) {
-			int id = getIdFromName(s);
+			int id = Integer.parseInt(s);
 			List<Integer> X = questsSection.getIntegerList(s);
 			for(int n : X) {
 				quests.add(new Quest(id, n));
