@@ -9,7 +9,7 @@ public class Quest {
 	private int progression;
 	private int goal;
 	
-	public Quest(int ranking) {
+	public Quest(int id, int goal) {
 		this.name = null;
 		this.ranking = ranking;
 		this.id = 0;
