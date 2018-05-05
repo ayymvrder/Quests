@@ -15,7 +15,7 @@ import fr.plutonia.quests.command.Quests;
 
 public class Core extends JavaPlugin {
 	
-	public static String prefix = "§e[Quete] §f";
+	public static String prefix = ChatColor.YELLOW + "[Quete] " + ChatColor.RESET;
 	public static HashMap<UUID, QPlayer> qplayer_oc;
 	public static ArrayList<Quest> quests = new ArrayList<>();
 	
