@@ -47,7 +47,8 @@ quests:
     event_related: 'connection_time'
     goal_base: 20
 sql:
-  urlbase:
-  database:
-  username:
-  password:
+  urlbase: jdbc:mysql://
+  database: host
+  username: user
+  password: password
+  tab: Quest
