@@ -1,4 +1,4 @@
-package fr.murder.quests;
+package fr.plutonia.quests;
 
 import java.text.SimpleDateFormat;
 import java.util.UUID;
