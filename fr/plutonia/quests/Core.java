@@ -1,5 +1,6 @@
-package fr.plutonia.quests;
+package fr.murder.quests;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -10,21 +11,22 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import fr.plutonia.quests.command.Developer;
-import fr.plutonia.quests.command.Quests;
+import fr.murder.quests.command.Developer;
 
 public class Core extends JavaPlugin {
 	
-	public static String prefix = ChatColor.YELLOW + "[Quete] " + ChatColor.RESET;
+	public static String prefix = "§c[§6Quete§c] §f§r";
 	public static HashMap<UUID, QPlayer> qplayer_oc;
 	public static ArrayList<Quest> quests = new ArrayList<>();
+	public static AskiaSql sql;
+	public static AskiaSqlBase sqlBase;
+	public static String tab;
 	
 	@Override
 	public void onEnable() {
 		qplayer_oc = new HashMap<UUID, QPlayer>();
 		
 		getCommand("developer").setExecutor(new Developer());
-		getCommand("quests").setExecutor(new Quests());
 		
 		@SuppressWarnings("deprecation")
 		Player[] players = Bukkit.getOnlinePlayers();
@@ -40,11 +42,30 @@ public class Core extends JavaPlugin {
 				quests.add(new Quest(id, n));
 			}
 		}
-
+	}
+	
+	@Override
+	public void onDisable() {
+		super.onDisable();
+	}
+	
+	public void initSQL(String urlBase, String host, String database, String username, String password, String table) {
+		sqlBase = new AskiaSqlBase(urlBase, host, database, username, password);
+		sqlBase.connection();
+		try {
+			sqlBase.init(table);
+		} catch (SQLException e) {
+			Bukkit.getPluginManager().disablePlugin(this);
+			e.printStackTrace();
+		}
+		sql = sqlBase.make();
+		
 	}
 	
 	public static int getRanking(String player) {
-		return 1;
+		String s = sql.getString(player, tab, "Player", "Quest");
+		
+		return s.split(";").length;
 	}
 	
 	public static QPlayer getQPlayer(Player player) {
