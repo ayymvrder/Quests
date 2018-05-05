@@ -29,7 +29,7 @@ public class Quests implements CommandExecutor {
 		}
 		
 		Inventory inv = Bukkit.createInventory(null, 9, ChatColor.DARK_GREEN + "Quêtes journalières");
-		for(int i=2; i<8; i++) {
+		for(int i=2; i<7; i++) {
 			ItemStack is = new ItemStack(Material.ANVIL);
 			ItemMeta im = is.getItemMeta();
 			im.setDisplayName("Jour " + i);
