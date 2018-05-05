@@ -1,4 +1,4 @@
 name: Quests
 version: 0.0.1
 authors: [Murder, Myskdias]
-main: fr.murder.quests.Core
+main: fr.plutonia.quests.Core
