@@ -1,3 +1,5 @@
+plugin:
+  prefix: ''
 quests:
   0:
     name: 'Meurtrier'
