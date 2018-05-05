@@ -28,23 +28,17 @@ public class Core extends JavaPlugin {
 		saveDefaultConfig();
 		
 		initSQL(getConfig().getString("sql.urlbase"),
-			getConfig().getString("sql.host"),
-			getConfig().getString("sql.database"),
-			getConfig().getString("sql.username"),
-			getConfig().getString("sql.password"),
-			getConfig().getString("sql.tab"));
+				getConfig().getString("sql.host"),
+				getConfig().getString("sql.database"),
+				getConfig().getString("sql.username"),
+				getConfig().getString("sql.password"),
+				getConfig().getString("sql.tab"));
 		
 		prefix = getConfig().getString("plugin.prefix");
 		
 		qplayer_oc = new HashMap<UUID, QPlayer>();
 		
 		getCommand("developer").setExecutor(new Developer());
-		
-		@SuppressWarnings("deprecation")
-		Player[] players = Bukkit.getOnlinePlayers();
-		for(int i=0; i < players.length; i++) {
-			QPlayer qp = new QPlayer(players[i]);
-		}
 	
 		ConfigurationSection questsSection = getConfig().getConfigurationSection("quests");
 		for(String s : questsSection.getKeys(true)) {
