@@ -1,6 +1,7 @@
 package fr.murder.quests.event;
 
 import java.text.SimpleDateFormat;
+import java.util.Random;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -17,15 +18,24 @@ public class PlayerJoin implements Listener {
 	public void onPlayerJoin(PlayerJoinEvent event) {
 		Player player = event.getPlayer();
 		QPlayer qplayer = Core.getQPlayer(player);
-		Quest current = qplayer.getCurrentQuest();
 		
-		if(qplayer.getDate() != new SimpleDateFormat("dd/MM/yyyy").toString() && ! qplayer.hasSucceeded()) {
-			//supprimer quete
+		if(qplayer.getDate() != new SimpleDateFormat("dd/MM/yyyy").toString()) {
+			if(!qplayer.hasSucceeded()) {
+				player.sendMessage(Core.prefix + "§cVous n'avez pas réussi la quête précédente");
+				Quest random = Core.quests.get(new Random().nextInt(Core.quests.size()));
+				qplayer.setCurrentQuest(random);
+			} {
+				Quest random = Core.quests.get(new Random().nextInt(Core.quests.size()));
+				random.setGoal((int) (random.getGoal() * (Core.getRanking(player.getName()) * 0.78)));
+				qplayer.setCurrentQuest(random);
+			}
 		}
+		qplayer.setTimeMillis(System.currentTimeMillis());
 		
-		if(current.getId() == 1) {
-			//enregistrer heure de connexion
-		}
 	}
 
+	public static void main(String[] args) {
+	}
+	
 }
+
