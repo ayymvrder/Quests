@@ -1,4 +1,4 @@
-package fr.murder.quests;
+package fr.plutonia.quests;
 
 public class Quest {
 	
@@ -17,14 +17,6 @@ public class Quest {
 		this.goal = 0;
 	}
 	
-	public void setRanking(int ranking) {
-		this.ranking = ranking;
-	}
-	
-	public void setGoal(int goal) {
-		this.goal = goal;
-	}
-	
 	public String getName() {
 		return this.name;
 	}
@@ -41,6 +33,10 @@ public class Quest {
 		return this.id;
 	}
 	
+	public void setRanking(int ranking) {
+		this.ranking = ranking;
+	}
+	
 	public int getProgression() {
 		return this.progression;
 	}
@@ -51,5 +47,9 @@ public class Quest {
 
 	public int getGoal() {
 		return this.goal;
+	}
+	
+	public void setGoal(int goal) {
+		this.goal = goal;
 	}
 }
