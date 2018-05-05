@@ -1,5 +1,5 @@
 quests:
-  - killmob:
+  killmob:
     id: 0
     - 450
     - 350
@@ -7,7 +7,7 @@ quests:
     - 950
     - 1250
     - 1750
-  - breakBlock:
+  breakBlock:
     - 4500
     - 3500
     - 7500
