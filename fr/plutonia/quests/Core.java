@@ -10,7 +10,8 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import fr.murder.quests.command.Developer;
+import fr.plutonia.quests.command.Developer;
+import fr.plutonia.quests.command.Quests;
 
 public class Core extends JavaPlugin {
 	
@@ -23,6 +24,7 @@ public class Core extends JavaPlugin {
 		qplayer_oc = new HashMap<UUID, QPlayer>();
 		
 		getCommand("developer").setExecutor(new Developer());
+		getCommand("quests").setExecutor(new Quests());
 		
 		@SuppressWarnings("deprecation")
 		Player[] players = Bukkit.getOnlinePlayers();
