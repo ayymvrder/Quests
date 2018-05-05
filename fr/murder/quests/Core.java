@@ -12,6 +12,7 @@ import fr.murder.quests.command.Developer;
 public class Core extends JavaPlugin {
 	
 	public static HashMap<UUID, QPlayer> qplayer_oc;
+	public static ArrayList<Quest> quests = new ArrayList<>();
 	
 	@Override
 	public void onEnable() {
@@ -24,6 +25,20 @@ public class Core extends JavaPlugin {
 		for(int i=0; i < players.length; i++) {
 			QPlayer qp = new QPlayer(players[i]);
 		}
+	
+		ConfigurationSection questsSection = getConfig().getConfigurationSection("quests");
+		for(String s : questsSection.getKeys(true)) {
+			int id = getIdFromName(s);
+			List<Integer> X = questsSection.getIntegerList(s);
+			for(int n : X) {
+				quests.add(new Quest(id, n));
+			}
+		}
+
+	}
+	
+	public int getIdFromName(String name {
+		return 0;
 	}
 	
 	public static QPlayer getQPlayer(Player player) {
