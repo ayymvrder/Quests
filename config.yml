@@ -17,3 +17,8 @@ quests:
 
 
 killmob: 50*j (j le jour)
+
+
+0:
+  name: killmob;
+  
