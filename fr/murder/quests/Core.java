@@ -37,7 +37,7 @@ public class Core extends JavaPlugin {
 
 	}
 	
-	public int getIdFromName(String name {
+	public int getIdFromName(String name) {
 		return 0;
 	}
 	
