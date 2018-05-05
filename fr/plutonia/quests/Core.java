@@ -49,9 +49,14 @@ public class Core extends JavaPlugin {
 		}
 	}
 	
-	@Override
-	public void onDisable() {
-		super.onDisable();
+	public static QPlayer getQPlayer(Player player) {
+		return qplayer_oc.containsKey(player.getUniqueId()) ? qplayer_oc.get(player.getUniqueId()) : new QPlayer(player);
+	}
+	
+	public static int getRanking(String player) {
+		String s = sql.getString(player, tab, "Player", "Quest");
+		
+		return s.split(";").length;
 	}
 	
 	public void initSQL(String urlBase, String host, String database, String username, String password, String table) {
@@ -66,15 +71,4 @@ public class Core extends JavaPlugin {
 		sql = sqlBase.make();
 		
 	}
-	
-	public static int getRanking(String player) {
-		String s = sql.getString(player, tab, "Player", "Quest");
-		
-		return s.split(";").length;
-	}
-	
-	public static QPlayer getQPlayer(Player player) {
-		return qplayer_oc.containsKey(player.getUniqueId()) ? qplayer_oc.get(player.getUniqueId()) : new QPlayer(player);
-	}
-
 }
