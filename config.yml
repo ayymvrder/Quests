@@ -1,0 +1,51 @@
+quests:
+  0:
+    name: 'Meurtrier'
+    description: 'Tuez {goal} joueurs'
+    event_related: 'player_kill'
+    goal_base: 5
+  1:
+    name: 'Chasseur'
+    description: 'Tuez {goal} mobs'
+    event_related: 'mob_kill'
+    goal_base: 75
+  2:
+    name: 'Joaillier'
+    description: 'Cassez {goal} minerais'
+    event_related: 'ore_break'
+    goal_base: 30
+  3:
+    name: 'Mineur'
+    description: 'Cassez {goal} blocs'
+    event_related: 'block_break'
+    goal_base: 100
+  4:
+    name: 'Architecte'
+    description: 'Placez {goal} blocs'
+    event_related: 'block_place'
+    goal_base: 150
+  5:
+    name: 'Inventeur'
+    description: 'Craftez un(e) {goal}'
+    event_related: 'item_craft'
+    goal_base: -1
+  6:
+    name: 'Enchanteur'
+    description: 'Gagnez {goal} niveaux'
+    event_related: 'xplevel_up'
+    goal_base: 30
+  7:
+    name: 'Aventurier'
+    description: 'Parcourez {goal} blocs'
+    event_related: ''
+    goal_base: 150
+  8:
+    name: 'Fidèle'
+    description: 'Restez connectés pendant {goal} heures'
+    event_related: 'connection_time'
+    goal_base: 20
+sql:
+  urlbase:
+  database:
+  username:
+  password:
