@@ -1,4 +1,4 @@
-package fr.murder.quests;
+package fr.plutonia.quests;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import fr.murder.quests.command.Developer;
+import fr.plutonia.quests.command.Developer;
 
 public class Core extends JavaPlugin {
 	
