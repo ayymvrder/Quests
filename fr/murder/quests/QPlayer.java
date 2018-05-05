@@ -11,12 +11,24 @@ public class QPlayer {
 	private Quest current_quest;
 	private int ranking;
 	private String date;
+	private long timeMillis;
 	
 	public QPlayer(Player player) {
+		this.timeMillis = System.currentTimeMillis();
 		this.uid = player.getUniqueId();
-		this.current_quest = new Quest(0);
+		this.current_quest = null;
 		this.ranking = 0;
 		this.date = new SimpleDateFormat("dd/MM/yyyy").toString();
+	}
+	
+	
+	
+	public long getTimeMillis() {
+		return timeMillis;
+	}
+	
+	public void setTimeMillis(long timeMillis) {
+		this.timeMillis = timeMillis;
 	}
 	
 	public UUID getUID() {
@@ -46,4 +58,13 @@ public class QPlayer {
 	public void setDate(String date) {
 		this.date = date;
 	}
+
+	public boolean hasSucceeded() {
+		if(current_quest == null) {
+			return false;
+		}
+		else return current_quest.getGoal() <= current_quest.getProgression();
+	}
+	
+	
 }
