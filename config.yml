@@ -48,7 +48,8 @@ quests:
     goal_base: 20
 sql:
   urlbase: jdbc:mysql://
-  database: host
+  host: 127.0.0.1
+  database: example
   username: user
   password: password
   tab: Quest
