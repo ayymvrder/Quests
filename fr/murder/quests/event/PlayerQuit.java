@@ -7,6 +7,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import fr.murder.quests.Core;
 import fr.murder.quests.QPlayer;
 import fr.murder.quests.Quest;
+import fr.murder.quests.Type;
 
 public class PlayerQuit implements Listener {
 	
@@ -15,8 +16,9 @@ public class PlayerQuit implements Listener {
 		QPlayer qplayer = Core.getQPlayer(event.getPlayer());
 		Quest current = qplayer.getCurrentQuest();
 		
-		if(current.getId() == 1) {
-			
+		if(current.getId() == Type.CONNECTED.getId()) {
+			current.setProgression((int) (current.getProgression() + ((System.currentTimeMillis() - qplayer.getTimeMillis() / 1000 / 60))));
+			qplayer.setTimeMillis(System.currentTimeMillis());
 		}
 	}
 
