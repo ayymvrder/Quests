@@ -1,9 +1,12 @@
 package fr.murder.quests;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.UUID;
 
 import org.bukkit.Bukkit;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -11,6 +14,7 @@ import fr.murder.quests.command.Developer;
 
 public class Core extends JavaPlugin {
 	
+	public static String prefix = "§c[§6Quete§c] §f§r";
 	public static HashMap<UUID, QPlayer> qplayer_oc;
 	public static ArrayList<Quest> quests = new ArrayList<>();
 	
@@ -37,12 +41,12 @@ public class Core extends JavaPlugin {
 
 	}
 	
-	public int getIdFromName(String name) {
-		return 0;
+	public static int getRanking(String player) {
+		return 1;
 	}
 	
 	public static QPlayer getQPlayer(Player player) {
-		return qplayer_oc.containsKey(player.getUniqueId()) ? qplayer_oc.get(player.getUniqueId()) : null;
+		return qplayer_oc.containsKey(player.getUniqueId()) ? qplayer_oc.get(player.getUniqueId()) : new QPlayer(player);
 	}
 
 }
